@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Rubik+Mono+One&display=swap');
+
+:root {
+  --neutral: #d7cec2;
+  --white: #fff;
+  --black: #000;
+  --blue: #005ce7;
+  --red: #ff5b2b;
+  --gold: #ffae1b;
+  --green: #008c26;
+  --dark-neutral: #948877;
+  --light-neutral: #f3ece2;
+  --light-border: rgb(219,185, 174, 0.5);
+  --accent-border: #DBB9AE;
+  --font-family: "Rubik", sans-serif;
+  --second-family: "Rubik Mono One", sans-serif;
+}
+
+/* Сброс стилей (минимальный reset) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--light-neutral);
+  color: var(--black);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--blue);
+}
