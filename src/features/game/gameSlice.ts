@@ -80,4 +80,4 @@ const gameSlice = createSlice({
 });
 
 export const { setTeams, setCards, setTimer, setGameSetting } = gameSlice.actions;
-export default gameSlice.reducer;
+export default gameSlice.reducer; // test TODO
