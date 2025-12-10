@@ -10,8 +10,17 @@
   --green: #008c26;
   --dark-neutral: #948877;
   --light-neutral: #f3ece2;
-  --light-border: rgb(219,185, 174, 0.5);
-  --accent-border: #DBB9AE;
+   --dark-border:  rgb(219,185, 174, 0.5);
+    --corners-dark-border: #DFA69C;
+
+    --light-border: #F5BEB6;
+    --corners-light--border:#F4D4CB;
+    --dark-bg-color: #d7cec2;
+    --light-bg-color: #f3ece2;
+    /*--light-border: rgb(219,185, 174, 0.5);*/
+  /*--accent-border: #DFA69C;*/
+  /*  --bright-border: #F5BEB6;!*DFA69C*!*/
+  /*  --dim-border: #F4D4CB;*/
   --font-family: "Rubik", sans-serif;
   --second-family: "Rubik Mono One", sans-serif;
 }
