@@ -4,21 +4,30 @@ import styles from './LoadingGrid.module.css';
 const LoadingGrid: React.FC = () => {
   const [colors, setColors] = useState<string[]>([]);
 
-  // Генерируем случайные цвета для квадратиков при монтировании
   useEffect(() => {
-    const newColors = Array.from({ length: 25 }, () =>
-      Math.random() > 0.5 ? '#FF6B6B' : '#4D96FF'
-    );
-    setColors(newColors);
+    const colorList = [
+      'var(--black)',       // 1 убийца
+      ...Array(7).fill('var(--neutral)'), // 7 нейтральных
+      ...Array(8).fill('var(--blue)'),   // 8 синих
+      ...Array(9).fill('var(--red)'),    // 9 красных
+    ];
+
+    const shuffled = [...colorList];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    setColors(shuffled);
   }, []);
 
   return (
     <div className={styles.grid}>
-      {Array.from({ length: 25 }).map((_, index) => (
+      {colors.map((color, index) => (
         <div
           key={index}
           className={styles.cell}
-          style={{ backgroundColor: colors[index] }}
+          style={{ backgroundColor: color }}
         />
       ))}
     </div>

@@ -1,43 +1,14 @@
-.title {
-    font-family: var(--second-family);
-    font-size: 2.8rem;
-    color: var(--black);
-    margin-bottom: 24px;
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 72px;
-    line-height: 78%;
-    letter-spacing: -0.05em;
-    color: var(--black);
-}
-
-.createButton {
-    padding: 14px 32px;
-    font-family: var(--font-family);
-    font-size: 1.25rem;
-    font-weight: 600;
-    background: var(--blue);
-    color: var(--white);
-    border-radius: 12px;
-    transition: background 0.2s;
-}
-
-.createButton:hover {
-    background: #0047b3;
-}
 .wrapper {
     position: relative;
     min-height: 100vh;
     background: var(--light-bg-color);
-
 }
 
-/* Угловые квадраты */
 .corner {
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: var(--corners-dark-border); /* или другой цвет: #b8a899 и т.д. */
+    background-color: var(--corners-dark-border);
 }
 
 .corner.topLeft {
@@ -60,30 +31,149 @@
     right: 0;
 }
 
-/* Основной контент (заставка) */
 .container {
     display: grid;
-
-    /*align-items: center;*/
-    /*justify-content: center;*/
     min-height: 100vh;
-    padding: 20px;
     font-family: var(--font-family);
     position: relative;
     z-index: 1;
     border: 30px solid var(--dark-border);
-    grid-template-columns:  repeat(7, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 30px;
+    gap: 35px;
     grid-template-areas:
-            "header header header header box1 box1 box2"
-            "box3 box4 box4 box5 cube cube cube"
-            "box6 box6 box7 box7 cube cube cube";
+        "header header header header header box1 box1  box1 box2 box2"
+        "box3 box4 box4 box4 box5 box5  cube cube cube cube"
+        "box6 box6 box7  box7 box7 box7 cube cube cube cube";
 }
+
 .title {
     grid-area: header;
+    font-family: var(--font-family);
+    font-size: 10rem;
+    font-weight: 500;
+    line-height: 78%;
+    letter-spacing: -0.05em;
+    color: var(--black);
+    display: flex;
+    align-items: end;
+    margin-bottom: 50px;
+}
+
+.cornerBlack {
+    grid-area: box1;
+    background-color: var(--black);
+}
+
+.accentRed {
+    grid-area: box2;
+    background-color: var(--red);
+}
+
+.cornerBlackMiddle {
+    grid-area: box3;
+    background-color: var(--black);
+}
+
+.accentRedMiddle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: box4;
+    background-color: var(--red);
+    transition: background-color 0.4s;
+}
+
+.centerButtonActive {
+    background-color: rgba(255, 91, 43, 0.85);
+    border-radius: 4px;
+}
+
+.createButton {
+    padding: 20px 40px;
+    font-family: var(--font-family);
+    font-size: 1.26rem;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--blue);
+    border: 1px solid rgb(87, 86, 86);
+    border-radius: 12px;
+    cursor: pointer;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        background-color 0.1s;
+        text-decoration: none;
+}
+
+.centerButtonActive .createButton {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.createButton:hover {
+    background: #0047b3;
+}
+
+.accentBlueMiddle {
+    grid-area: box5;
+    background-color: var(--blue);
+}
+
+.accentBlueBottom {
+    grid-area: box6;
+    background-color: var(--blue);
+}
+
+.cornerBlackBottom {
+    grid-area: box7;
+    background-color: var(--black);
 }
 
 .cube {
     grid-area: cube;
+    position: relative;
+    border: 30px solid var(--black);
+}
+
+.stripes {
+    position: absolute;
+    background-color: var(--red);
+    z-index: 100;
+    pointer-events: none;
+}
+
+.stripesTop {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 15px;
+}
+
+.stripesBottom {
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 15px;
+}
+
+.stripesLeft {
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 80px;
+}
+
+.stripesRight {
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 80px;
 }
